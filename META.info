@@ -14,6 +14,7 @@
     "lib",
     "Test"
   ],
+  "source-url": "git://github.com/tony-o/perl6-http-server.git"
   "description" : "role for HTTP::Server so we can have start building out some servers with interchangeable backends",
   "version" : "0.1.0"
 }
