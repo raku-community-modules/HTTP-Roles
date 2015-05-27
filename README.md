@@ -40,6 +40,6 @@ also provides some generic attributes for the class that _should_ be present in 
 
 #```HTTP::Response```
 
-should provide methods ```close($data?, :force? = False)``` and ```write($data)```  
+should provide methods ```close($data?, :$force? = False)``` and ```write($data)```  
 
 also provides some generic attributes for the class that _should_ be present in any decent HTTP::Response

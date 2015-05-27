@@ -4,7 +4,7 @@ role HTTP::Response {
   has %.headers is rw;
   has $.connection;
 
-  method close($data?, :force? = False) {...}
+  method close($data?, :$force? = False) {...}
   method write($data) {...}
 
   has %.statuscodes = (
