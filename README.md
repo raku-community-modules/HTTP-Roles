@@ -4,6 +4,8 @@ role stating something abides by some standard
 
 ##roles & intentions
 
+#```HTTP::Server```
+
 ###```Callable $sub```
 
 This is the argument you can provide to any of the methods below
@@ -29,3 +31,15 @@ sub ($req, $res) {
 ###listen: ```method listen {...}```
 
 ```listen``` is telling the server to start up and start accepting connections
+
+#```HTTP::Request```
+
+provides a generic ```method header(*@headers)``` to retrieve headers in a case insensitive way
+
+also provides some generic attributes for the class that _should_ be present in any decent HTTP::Request
+
+#```HTTP::Response```
+
+should provide methods ```close($data?, :force? = False)``` and ```write($data)```  
+
+also provides some generic attributes for the class that _should_ be present in any decent HTTP::Response
