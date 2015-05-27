@@ -1,5 +1,6 @@
 {
-  "name" : "Http::Server",
+  "name" : "HTTP::Server",
+  "auth"        : "github:tony-o",
   "support" : {
     "source" : "https://github.com/tony-o/perl6-http-server.git"
   },
