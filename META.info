@@ -1,21 +1,10 @@
 {
   "name" : "HTTP::Server",
-  "auth"        : "github:tony-o",
-  "authors": [ "Tony O'Dell" ],
-  "support" : {
-    "bugtracker" : "https://github.com/tony-o/perl6-http-server/issues"
-  },
-  "perl" : "v6",
-  "build-depends" : [ ],
-  "provides" : {
-    "HTTP::Server" : "lib/HTTP/Server.pm6"
-  },
-  "depends" : [ ],
-  "test-depends" : [
-    "lib",
-    "Test"
-  ],
-  "source-url": "git://github.com/tony-o/perl6-http-server.git"
+  "version" : "0.1",
   "description" : "role for HTTP::Server so we can have start building out some servers with interchangeable backends",
-  "version" : "0.1.0"
+  "depends" : [],
+  "provides" : {
+      "HTTP::Server": "lib/HTTP/Server.pm6"
+  },
+  "source-url" : "git://github.com/tony-o/perl6-http-server.git"
 }
