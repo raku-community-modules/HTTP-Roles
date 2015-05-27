@@ -24,7 +24,7 @@ sub ($req, $res) {
 
 ###middleware: ```method middleware(Callable $sub) {...}```
 
-```middleware``` subs are meant to be called when a response is _complete_ and sent
+```middleware``` subs are meant to be called when a request headers are _complete_ 
 
 ###listen: ```method listen {...}```
 
