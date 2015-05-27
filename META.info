@@ -1,8 +1,9 @@
 {
   "name" : "HTTP::Server",
   "auth"        : "github:tony-o",
+  "authors": [ "Tony O'Dell" ],
   "support" : {
-    "source" : "https://github.com/tony-o/perl6-http-server.git"
+    "bugtracker" : "https://github.com/tony-o/perl6-http-server/issues"
   },
   "perl" : "v6",
   "build-depends" : [ ],
