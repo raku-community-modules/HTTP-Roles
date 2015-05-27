@@ -25,3 +25,7 @@ sub ($req, $res) {
 ###middleware: ```method middleware(Callable $sub) {...}```
 
 ```middleware``` subs are meant to be called when a response is _complete_ and sent
+
+###listen: ```method listen {...}```
+
+```listen``` is telling the server to start up and start accepting connections
