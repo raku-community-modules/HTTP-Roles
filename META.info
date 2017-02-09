@@ -1,7 +1,7 @@
 {
   "perl" : "6.*",
   "name" : "HTTP::Server",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "author" : "tony-o",
   "auth": "github:tony-o",
   "description" : "role for HTTP::Server so we can have start building out some servers with interchangeable backends",
@@ -11,5 +11,5 @@
       "HTTP::Response": "lib/HTTP/Response.pm6",
       "HTTP::Request": "lib/HTTP/Request.pm6"
   },
-  "source-url" : "git://github.com/tony-o/perl6-http-server.git"
+  "source-url" : "git://github.com/perl6/perl6-http-server.git"
 }
