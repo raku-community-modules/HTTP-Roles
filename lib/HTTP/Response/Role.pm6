@@ -1,4 +1,4 @@
-role HTTP::Response {
+role HTTP::Response::Role {
   has Int  $.status is rw = 200;
 
   has %.headers is rw;
