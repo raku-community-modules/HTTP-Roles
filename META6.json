@@ -11,6 +11,6 @@
       "HTTP::Response": "lib/HTTP/Response.pm6",
       "HTTP::Request": "lib/HTTP/Request.pm6"
   },
-  "source-url" : "git://github.com/perl6-communuty-modules/perl6-http-server.git",
+  "source-url" : "git://github.com/perl6-community-modules/perl6-http-server.git",
   "meta-version": "0"
 }
