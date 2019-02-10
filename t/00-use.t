@@ -1,6 +1,6 @@
 
 use lib 'lib';
-use HTTP::Server;
+use HTTP::Server::Role;
 use Test;
 
 plan 2;
@@ -10,14 +10,14 @@ ok !so try {
   my $r = (class {
 
   }).new;
-  $r does HTTP::Server;
+  $r does HTTP::Server::Role;
   $r.middleware;
   True;
 }, 'Class must implement methods from role';
 
 ok try {
   CATCH { default { .say; False; } };
-  my $r = (class :: does HTTP::Server {
+  my $r = (class :: does HTTP::Server::Role {
     method middleware { qw<hi>; }
     method after      { qw<hi>; }
     method handler    { qw<hi>; }
