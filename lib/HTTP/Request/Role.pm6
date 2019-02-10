@@ -1,4 +1,4 @@
-role HTTP::Request {
+role HTTP::Request::Role {
   has Str $.method;
   has Str $.uri;
   has Str $.version;
