@@ -3,8 +3,8 @@
   "name" : "HTTP::Roles",
   "version" : "0.2.0",
   "authors" : ["tony-o"],
-  "auth": "github:tony-o",
-  "description" : "role for HTTP::Server so we can have start building out some servers with interchangeable backends",
+  "auth": "github:raku-community-modules",
+  "description" : "Roles for HTTP::Server so we can have start building out some servers with interchangeable backends",
   "depends" : [],
   "provides" : {
       "HTTP::Server::Role": "lib/HTTP/Server/Role.pm6",
