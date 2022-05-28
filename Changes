@@ -1,0 +1,10 @@
+Revision history for HTTP-Roles
+
+{{$NEXT}}
+    - Changed the name of the module to HTTP::Roles, not just in
+      the META information.
+    - Moved all roles into a single file, adapted the META accordingly.
+    - Added HTTP::Roles as a use target.
+    - Removed local, outdated copy of HTTP status codes, added
+      dependency on HTTP::Status and use its .Map method.
+    - First version in zef ecosystem.

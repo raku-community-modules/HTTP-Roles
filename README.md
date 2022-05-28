@@ -1,47 +1,105 @@
-# HTTP::Server
+[![Actions Status](https://github.com/raku-community-modules/HTTP-Server/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/HTTP-Server/actions)
 
-[![Build Status](https://travis-ci.org/perl6-community-modules/perl6-http-server.svg?branch=master)](https://travis-ci.org/perl6-community-modules/perl6-http-server)
+NAME
+====
 
-Role that states that something abides by some standard
+HTTP::Roles - Roles for an HTTP::Server with interchangeable backends
 
-## Roles & intentions
+SYNOPSIS
+========
 
-# ```HTTP::Server```
+```raku
+use HTTP::Roles;
 
-###```Callable $sub```
-
-This is the argument you can provide to any of the methods below
-
-```perl6
-sub ($req, $res) { 
-  qw<do some stuff>;  
+my class HTTP::Server::MyWay does HTTP::Server::Role {
+    ...
+}
+my class HTTP::Request::MyWay does HTTP::Request::Role {
+    ...
+}
+my class HTTP::Response::MyWay does HTTP::Response::Role {
+    ...
 }
 ```
 
-### Handlers: ```method handler(Callable $sub) {...}```
+DESCRIPTION
+===========
 
-```handler``` subs are meant to be called when a request is _complete_ by both headers and body
+HTTP::Roles provides a set of roles to define the functionality of an HTTP server, and handling requests and responses.
 
-### after: ```method after(Callable $sub) {...}```
+ROLES
+=====
 
-```after``` subs are meant to be called when a response is _complete_ and sent
+HTTP::Server::Role
+------------------
 
-### middleware: ```method middleware(Callable $sub) {...}```
+All of the methods defined by the `HTTP::Server::Role` take a `Callable` as the argument, which should provide the necessary functionality.
 
-```middleware``` subs are meant to be called when request headers are _complete_ 
+### listen
 
-### listen: ```method listen {...}```
+Calling the `listen` method is telling the server to start up and start accepting connections.
 
-```listen``` is telling the server to start up and start accepting connections
+### middleware
 
-# ```HTTP::Request```
+The `middleware` method should be called with a `Callable` during server setup: the specified `Callable` is to be executed whenever the reception of the request headers of a request is complete.
 
-provides a generic ```method header(*@headers)``` to retrieve headers in a case insensitive way
+### handler
 
-also provides some generic attributes for the class that _should_ be present in any decent HTTP::Request
+The `handler` method should be called with a `Callable` during server setup: the specified `Callable` is to be executed whenever the reception of the request headers **and** the body of a request is complete.
 
-# ```HTTP::Response```
+### after
 
-should provide methods ```close($data?, :$force? = False)``` and ```write($data)```  
+The `after` method should be called with a `Callable` during server setup: the specified `Callable` is to be executed whenever the response is complete and sent.
 
-also provides some generic attributes for the class that _should_ be present in any decent HTTP::Response
+HTTP::Request::Role
+-------------------
+
+The `HTTP::Request::Role` provides some generic attributes for the class that *should* be present in any decent `HTTP::Request` class. These are:
+
+```raku
+has Str $.method;
+has Str $.uri;
+has Str $.version;
+has Buf $.data is rw;
+has     %.params;
+has     %.headers;
+```
+
+### header
+
+A generic `header` method to retrieve headers in a case insensitive way from the `%.headers` attribute.
+
+HTTP::Response::Role
+--------------------
+
+The `HTTP::Response::Role` provides some generic attributes for the class that *should* be present in any decent `HTTP::Response` class.
+
+```raku
+has Int:D $.status is rw = 200;
+has       %.headers is rw;
+has       $.connection;
+has       %.statuscodes = HTTP::Status.Map;
+```
+
+### write
+
+The `write` method is expected to write the given data of the response.
+
+### close
+
+The `close` method is expected to close the connection to the client, taking any optional data to be sent, and a named argument `:force` to forcefully close the connection (which defaults to `False`).
+
+AUTHOR
+======
+
+Tony O'Dell
+
+COPYRIGHT AND LICENSE
+=====================
+
+Copyright 2015 - 2019 Tony O'Dell
+
+Copyright 2020 - 2022 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+

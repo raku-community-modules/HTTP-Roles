@@ -1,16 +1,30 @@
 {
-  "perl" : "6.*",
-  "name" : "HTTP::Roles",
-  "version" : "0.2.0",
-  "authors" : ["tony-o"],
-  "auth": "github:raku-community-modules",
-  "description" : "Roles for HTTP::Server so we can have start building out some servers with interchangeable backends",
-  "depends" : [],
-  "provides" : {
-      "HTTP::Server::Role": "lib/HTTP/Server/Role.pm6",
-      "HTTP::Response::Role": "lib/HTTP/Response/Role.pm6",
-      "HTTP::Request::Role": "lib/HTTP/Request/Role.pm6"
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "Tony O'Dell"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+    "HTTP::Status:auth<zef:lizmat>:ver<0.0.4+>"
+  ],
+  "description": "Roles for an HTTP::Server with interchangeable backends",
+  "license": "Artistic-2.0",
+  "meta-version": "0",
+  "name": "HTTP::Roles",
+  "perl": "6.*",
+  "provides": {
+    "HTTP::Request::Role": "lib/HTTP/Roles.rakumod",
+    "HTTP::Response::Role": "lib/HTTP/Roles.rakumod",
+    "HTTP::Roles": "lib/HTTP/Roles.rakumod",
+    "HTTP::Server::Role": "lib/HTTP/Roles.rakumod"
   },
-  "source-url" : "git://github.com/raku-community-modules/HTTP-Server.git",
-  "meta-version": "0"
+  "resources": [
+  ],
+  "source-url": "git://github.com/raku-community-modules/HTTP-Server.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.2.1"
 }
