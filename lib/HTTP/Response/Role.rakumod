@@ -1,5 +1,5 @@
 use HTTP::Status;
-BEGIN my %status := HTTP::Status.Map;
+my %status := HTTP::Status.Map;
 
 role HTTP::Response::Role {
     has Int:D $.status is rw = 200;
