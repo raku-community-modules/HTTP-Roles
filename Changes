@@ -1,6 +1,10 @@
 Revision history for HTTP-Roles
 
 {{$NEXT}}
+    - Restore separate files for the separate use targets again, as
+      the single file way appears to have broken some client's test
+      code, specifically HTTP::Server::Async.
+    - Follow the name change of the repository.
 
 0.2.1  2022-05-28T22:34:12+02:00
     - Changed the name of the module to HTTP::Roles, not just in

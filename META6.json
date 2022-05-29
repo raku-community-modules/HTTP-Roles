@@ -14,10 +14,10 @@
   "name": "HTTP::Roles",
   "perl": "6.*",
   "provides": {
-    "HTTP::Request::Role": "lib/HTTP/Roles.rakumod",
-    "HTTP::Response::Role": "lib/HTTP/Roles.rakumod",
+    "HTTP::Request::Role": "lib/HTTP/Request/Role.rakumod",
+    "HTTP::Response::Role": "lib/HTTP/Response/Role.rakumod",
     "HTTP::Roles": "lib/HTTP/Roles.rakumod",
-    "HTTP::Server::Role": "lib/HTTP/Roles.rakumod"
+    "HTTP::Server::Role": "lib/HTTP/Server/Role.rakumod"
   },
   "resources": [
   ],
@@ -26,5 +26,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.2.1"
+  "version": "0.2.2"
 }

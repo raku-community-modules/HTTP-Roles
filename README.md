@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/raku-community-modules/HTTP-Server/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/HTTP-Server/actions)
+[![Actions Status](https://github.com/raku-community-modules/HTTP-Roles/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/HTTP-Roles/actions)
 
 NAME
 ====

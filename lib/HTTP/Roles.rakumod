@@ -1,40 +1,6 @@
-use HTTP::Status;
-BEGIN my %status := HTTP::Status.Map;
-
-role HTTP::Server::Role {
-    method handler(Callable $sub) {*}    # to be called when request is complete
-    method middleware(Callable $sub) {*} # to be called when headers are complete
-    method after(Callable $sub) {*}      # to be called when response is complete
-    method listen() {*}                  # to be called to start the server
-}
-
-role HTTP::Request::Role {
-    has Str $.method;
-    has Str $.uri;
-    has Str $.version;
-    has Buf $.data is rw;
-    has     %.params;
-    has     %.headers;
-
-    method header(*@headers) {
-        my @r;
-        my %h = @headers.map({ $_.lc => $_ });
-        %.headers.keys.map(-> $k {
-            @r.append($( %h{$k.lc} => %.headers{$k} )) if $k.lc ~~ any %h.keys;
-        });
-        @r
-    }
-}
-
-role HTTP::Response::Role {
-    has Int:D $.status is rw = 200;
-    has %.headers is rw;
-    has $.connection;
-    has %.statuscodes = %status;
-
-    method close($data?, :$force? = False) {*}
-    method write($data) {*}
-}
+use HTTP::Server::Role;
+use HTTP::Request::Role;
+use HTTP::Response::Role;
 
 =begin pod
 
